@@ -10,25 +10,25 @@
 
             <Button x:Name="PlayAgainButton" Text="Play again?" FontSize="Large" Clicked="PlayAgainButton_Clicked" />
             <Label x:Name="TimeElapsed" Text="Time Elapsed: 0.0 seconds" FontSize="Large" />
+ 
 
-
-            <FlexLayout x:Name="AnimalButtons" MaximumWidthRequest="400" Wrap="Wrap">
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
-                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="60" Clicked="Button_Clicked"/>
+            <FlexLayout x:Name="AnimalButtons" MaximumWidthRequest="400" Wrap="Wrap" IsVisible="False">
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
+                <Button BackgroundColor="LightBlue" BorderColor="Black" BorderWidth="1" WidthRequest="100" HeightRequest="100" FontSize="50" Clicked="Button_Clicked"/>
             </FlexLayout>
 
         </VerticalStackLayout>
