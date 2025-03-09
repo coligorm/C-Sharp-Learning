@@ -1,0 +1,15 @@
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\bin\Debug\net9.0\FirstConsoleApp.exe
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\bin\Debug\net9.0\FirstConsoleApp.deps.json
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\bin\Debug\net9.0\FirstConsoleApp.runtimeconfig.json
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\bin\Debug\net9.0\FirstConsoleApp.dll
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\bin\Debug\net9.0\FirstConsoleApp.pdb
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\obj\Debug\net9.0\FirstConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\obj\Debug\net9.0\FirstConsoleApp.AssemblyInfoInputs.cache
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\obj\Debug\net9.0\FirstConsoleApp.AssemblyInfo.cs
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\obj\Debug\net9.0\FirstConsoleApp.csproj.CoreCompileInputs.cache
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\obj\Debug\net9.0\FirstConsoleApp.sourcelink.json
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\obj\Debug\net9.0\FirstConsoleApp.dll
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\obj\Debug\net9.0\refint\FirstConsoleApp.dll
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\obj\Debug\net9.0\FirstConsoleApp.pdb
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\obj\Debug\net9.0\FirstConsoleApp.genruntimeconfig.cache
+C:\Repos\C-Sharp-Learning\FirstConsoleApp\FirstConsoleApp\obj\Debug\net9.0\ref\FirstConsoleApp.dll
