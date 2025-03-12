@@ -30,6 +30,52 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+
+            <Entry Placeholder="Enter some text..."
+                   SemanticProperties.Hint="Lets you enter some text here"
+                   HorizontalOptions="Fill"
+                   TextChanged="Entry_TextChanged"/>
+
+            <Label
+                Text="Here's what you typed:"
+                HorizontalOptions="Fill"
+                SemanticProperties.Description="Here's what you typed:" />
+            
+            <Label
+                x:Name="EnteredText"
+                HorizontalOptions="Fill"
+                SemanticProperties.Description="The text that the user entered"
+                BackgroundColor="DarkGoldenrod" Margin="0,0,0,20" />
+
+            <Stepper
+                x:Name="Stepper"
+                Minimum="0"
+                Maximum="10"
+                Increment="1"
+                ValueChanged="OnStepperValueChanged"
+                SemanticProperties.Hint="Increments or decrements the value" />
+
+            <Label
+                x:Name="StepperValue"
+                Text="Here's the stepper value:"
+                HorizontalOptions="Fill"
+                SemanticProperties.Description="The value of the stepper"
+                BackgroundColor="LightBlue" Margin="0,0,0,20" />
+
+            <Slider
+                x:Name="Slider"
+                Minimum="0"
+                Maximum="100"
+                ValueChanged="OnSliderValueChanged"
+                SemanticProperties.Hint="Changes the value of the slider" />
+
+            <Label
+                x:Name="SliderValue"
+                Text="Here's the slider value:"
+                HorizontalOptions="Fill"
+                SemanticProperties.Description="The value of the slider"
+                BackgroundColor="LightBlue" Margin="0,0,0,20" />
+
         </VerticalStackLayout>
     </ScrollView>
 

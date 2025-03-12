@@ -20,6 +20,21 @@
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
+
+        private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            EnteredText.Text = e.NewTextValue;
+        }
+
+        private void OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            StepperValue.Text = e.NewValue.ToString();
+        }
+
+        private void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            SliderValue.Text = e.NewValue.ToString();
+        }
     }
 
 }
