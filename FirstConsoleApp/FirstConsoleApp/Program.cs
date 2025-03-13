@@ -1,4 +1,6 @@
-﻿OperatorExamples();
+﻿using FirstConsoleApp;
+
+OperatorExamples();
 LoopExamples();
 TryAnIf();
 TrySomeLoops();
@@ -136,4 +138,101 @@ void TrySomeLoops()
     }
 
     Console.WriteLine("The answer is " + count);
+}
+
+
+//Chapter 3: Sharpen your pencil exercise p163
+
+double[] randomDoubles = new double[20];
+for (int i = 0; i < 20; i++)
+{
+    double value = Random.Shared.NextDouble();
+    randomDoubles[i] = value;
+}
+
+
+Guy joe = new Guy();
+joe.Name = "Joe";
+joe.Cash = 50;
+
+Guy bob = new Guy();
+bob.Name = "Bob";
+bob.Cash = 50;
+
+joe.WriteMyInfo();
+joe.GiveCash(25);
+bob.ReceiveCash(25);
+
+
+// object initializer
+Guy mark = new Guy() { Name = "Mark", Cash = 50 };
+
+TradeMoney();
+
+void TradeMoney()
+{
+    while (true)
+    {
+        Console.WriteLine("Time to Trade Money!");
+        Guy[] guys = [joe, bob, mark];
+        foreach (Guy guy in guys)
+        {
+            guy.WriteMyInfo();
+        }
+        Console.Write("Enter an amount: ");
+        string? input = Console.ReadLine();
+
+        if (!int.TryParse(input, out int amount))
+        {
+            Console.WriteLine("Invalid amount");
+            continue;
+        }
+
+        Guy? giverGuy = null;
+        while (true)
+        {
+            Console.Write("Who should give the cash? ");
+            string? giver  = Console.ReadLine();
+            giverGuy = guys.FirstOrDefault(g => g.Name == giver);
+            if (giverGuy != null)
+            {
+                break; // valid name
+            }
+            else
+            {
+                Console.WriteLine($"{giver} is not in guys!");
+            }
+        }
+
+        Guy? receiverGuy = null;
+        while (true)
+        {
+            Console.Write("Who should receive the cash? ");
+            string? receiver = Console.ReadLine();
+            receiverGuy = guys.FirstOrDefault(g => g.Name == receiver);
+            if (receiverGuy == null)
+            {
+                Console.WriteLine($"{receiver} is not in guys!");
+            }
+            else if (giverGuy == receiverGuy) 
+            {
+                Console.WriteLine($"{receiver} can't give himself money");
+            }
+            else
+            {
+                break; // valid name
+            }
+        }
+
+        if (giverGuy.GiveCash(amount) <= 0)
+        {
+            Console.WriteLine("Invalid trade...");
+            Console.WriteLine("Try again");
+        }
+        else
+        {
+            receiverGuy.ReceiveCash(amount);
+        }
+        
+    }
 }
