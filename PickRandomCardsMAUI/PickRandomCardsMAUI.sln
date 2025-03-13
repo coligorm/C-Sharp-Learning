@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickRandomCardsMAUI", "PickRandomCardsMAUI\PickRandomCardsMAUI.csproj", "{FEFE61E3-2672-4501-AF8E-38757AF3A738}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEFE61E3-2672-4501-AF8E-38757AF3A738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEFE61E3-2672-4501-AF8E-38757AF3A738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEFE61E3-2672-4501-AF8E-38757AF3A738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEFE61E3-2672-4501-AF8E-38757AF3A738}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D964D5AD-ACBF-4D04-8F6E-3D8671B22135}
+	EndGlobalSection
+EndGlobal
