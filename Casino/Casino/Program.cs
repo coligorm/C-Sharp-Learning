@@ -1,36 +1,54 @@
 ﻿using Guys;
 
 double odds = .75;
-Guy player = new Guy() { Name = "The player", Cash = 100 };
+Guy player1 = new Guy() { Name = "Player 1", Cash = 100 };
+Guy player2 = new Guy() { Name = "Player 2", Cash = 100 };
 
 Console.WriteLine($"Welcome to the casino. The odds are {odds}");
 
-while (player.Cash > 0)
+while (player1.Cash > 0 | player2.Cash > 0)
 {
-    player.WriteMyInfo();
-    Console.Write("How much do you want to bet: ");
-    string? howMuch = Console.ReadLine();
+    player1.WriteMyInfo();
+    player2.WriteMyInfo();
+    Console.Write($"How much does {player1.Name} want to bet: ");
+    string? howMuchPlayer1 = Console.ReadLine();
+    Console.Write($"How much does {player2.Name} want to bet: ");
+    string? howMuchPlayer2 = Console.ReadLine();
 
-    if (int.TryParse(howMuch, out int amount))
+    if (int.TryParse(howMuchPlayer1, out int amountP1))
     {
-        // Double or nothing bet
-        int pot = player.GiveCash(amount) * 2;
-        if (pot > 0)
+        if (int.TryParse(howMuchPlayer2, out int amountP2))
         {
-            if (Random.Shared.NextDouble() > odds)
+            // Double or nothing bet
+            int pot = player1.GiveCash(amountP1) * 2;
+            pot = player2.GiveCash(amountP2) * 2;
+            if (pot > 0)
             {
-                Console.WriteLine($"You win {pot}");
-                player.ReceiveCash(pot);
+                // Player 1 Players
+                if (Random.Shared.NextDouble() > odds)
+                {
+                    Console.WriteLine($"{player1.Name} wins {pot}");
+                    player1.ReceiveCash(pot);
+                }
+                else if (Random.Shared.NextDouble() > odds)
+                {
+                    Console.WriteLine($"{player2.Name} wins {pot}");
+                    player2.ReceiveCash(pot);
+                }
+                else
+                {
+                    Console.WriteLine("Bad luck, you both lose.");
+                }
             }
-            else
-            {
-                Console.WriteLine("Bad luck, you lose.");
-            }
+        }
+        else
+        {
+            Console.WriteLine($"{player2.Name}: Please enter a valid number.");
         }
     }
     else
     {
-        Console.WriteLine("Please enter a valid number.");
+        Console.WriteLine($"{player1.Name}: Please enter a valid number.");
     }
 }
-Console.WriteLine("The house always wins.");
+Console.WriteLine("At least one of ye got away with something!");
