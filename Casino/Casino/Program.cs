@@ -3,11 +3,36 @@
 double odds = .75;
 Guy player1 = new Guy() { Name = "Player 1", Cash = 100 };
 Guy player2 = new Guy() { Name = "Player 2", Cash = 100 };
+List<Guy> players = new List<Guy>();
 
 Console.WriteLine($"Welcome to the casino. The odds are {odds}");
-
-while (player1.Cash > 0 | player2.Cash > 0)
+Console.WriteLine("How many players would like to play?");
+string? input = Console.ReadLine();
+if (int.TryParse(input, out int numberOfPlayers))
 {
+    for (int i = 0; i < numberOfPlayers; i++)
+    {
+        players.Add(new Guy() { Name = $"Player {i + 1}", Cash = 100 });
+        players[i].WriteMyInfo();
+    }
+}
+else
+{
+    Console.WriteLine($"{player2.Name}: Please enter a valid number.");
+}
+
+while (players.Any(player => player.Cash > 0)) 
+{
+    foreach (var player in players)
+    {
+        player.WriteMyInfo();
+        Console.Write($"How much does {player.Name} want to bet: ");
+        string? howMuch = Console.ReadLine();
+        if (int.TryParse(howMuch, out int amount))
+        {
+            
+        }
+    }
     player1.WriteMyInfo();
     player2.WriteMyInfo();
     Console.Write($"How much does {player1.Name} want to bet: ");
