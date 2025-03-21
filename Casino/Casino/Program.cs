@@ -6,30 +6,26 @@
 //
 double odds = .75;
 List<Guy> players = new List<Guy>();
+int numberOfPlayers;
 
 Console.WriteLine($"Welcome to the casino. The odds are {odds}");
 Console.WriteLine("How many players would like to play?");
-string? input = Console.ReadLine();
-if (int.TryParse(input, out int numberOfPlayers))
-{
-    for (int i = 0; i < numberOfPlayers; i++)
-    {
-        players.Add(new Guy() { Name = $"Player {i + 1}", Cash = 100 });
-        players[i].WriteMyInfo();
-    }
-}
-else
+while (!int.TryParse(Console.ReadLine(), out numberOfPlayers) || numberOfPlayers == 0)
 {
     Console.WriteLine("Please enter a valid number of players.");
 }
-//
-// TO FIX:
-// Game doesnt exit when a player busts
-//
-while (!players.Any(player => player.Cash == 0))
+
+for (int i = 0; i < numberOfPlayers; i++)
 {
-    foreach (var player in players)
+    players.Add(new Guy() { Name = $"Player {i + 1}", Cash = 100 });
+    players[i].WriteMyInfo();
+}
+
+while (players.Any(player => player.Cash > 0))
+{
+    for (int i = 0; i < players.Count; i++)
     {
+        Guy? player = players[i];
         Console.WriteLine("\n__________________\n");
         Console.WriteLine($"{player.Name}'s turn");
         player.WriteMyInfo();
@@ -72,13 +68,10 @@ while (!players.Any(player => player.Cash == 0))
         if (player.Cash == 0)
         {
             Console.WriteLine($"{player.Name} has bust!");
+            players.RemoveAt(i);
+            i--;
         }
 
-    } 
+    }
 }
-//
-// OPTIONAL ADDITION:
-// Add a way to continue and remove the player who bust
-//
-Console.WriteLine("Game Over!");
-Console.WriteLine("At least one player has bust, so everyone leaves");
+Console.WriteLine("\n\nGame Over!\nAll players have bust\n\nThe house always wins!");
