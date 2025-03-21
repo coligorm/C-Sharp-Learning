@@ -26,45 +26,54 @@ else
 // TO FIX:
 // Game doesnt exit when a player busts
 //
-while (players.Any(player => player.Cash > 0))
+while (!players.Any(player => player.Cash == 0))
 {
     foreach (var player in players)
     {
-        Console.WriteLine("___________________");
+        Console.WriteLine("\n__________________\n");
         Console.WriteLine($"{player.Name}'s turn");
         player.WriteMyInfo();
-        Console.Write($"How much does {player.Name} want to bet: ");
-        string? howMuch = Console.ReadLine();
-        if (int.TryParse(howMuch, out int amount) && (amount <= player.Cash))
+
+        // Loops until vaild bet is placed
+        while (true)
         {
-            int bet = player.GiveCash(amount);
-            int pot = bet * 2;
-            if (pot > 0)
+            Console.Write($"\nHow much does {player.Name} want to bet: ");
+            if (int.TryParse(Console.ReadLine(), out int amount))
             {
-                if (Random.Shared.NextDouble() > odds)
+                int bet = player.GiveCash(amount);
+                int pot = bet * 2;
+                if (pot > 0)
                 {
-                    Console.WriteLine($"{player.Name} wins {pot}");
-                    player.ReceiveCash(pot);
+                    if (Random.Shared.NextDouble() > odds)
+                    {
+                        Console.WriteLine($"{player.Name} wins {pot}");
+                        player.ReceiveCash(pot);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Unlucky, you lose!");
+                    }
+                    // Successful bet - whether win or lose
+                    break;
                 }
                 else
                 {
-                    Console.WriteLine("Unlucky, you lose!");
+                    Console.WriteLine("Not enough money in the pot!");
+                    Console.WriteLine("Try again!");
                 }
             }
             else
             {
-                Console.WriteLine("Not enough money in the pot!");
+                Console.WriteLine($"{player.Name}: Please enter a valid anount to bet.");
             }
-        }
-        else
-        {
-            Console.WriteLine($"{player.Name}: Please enter a valid anount to bet.");
+
         }
 
         if (player.Cash == 0)
         {
             Console.WriteLine($"{player.Name} has bust!");
         }
+
     } 
 }
 //
@@ -72,3 +81,4 @@ while (players.Any(player => player.Cash > 0))
 // Add a way to continue and remove the player who bust
 //
 Console.WriteLine("Game Over!");
+Console.WriteLine("At least one player has bust, so everyone leaves");
