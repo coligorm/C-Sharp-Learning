@@ -1,14 +1,14 @@
 ﻿using Guys;
-//
-// OPTIONAL ADDITION
-// Add a way to change odds
-// Better odds, higher reward
-//
-double odds = .75;
+
+decimal worseOdds = 0.75M;
+decimal betterOdds = 0.5M;
+decimal odds;
 List<Guy> players = new List<Guy>();
 int numberOfPlayers;
 
-Console.WriteLine($"Welcome to the casino. The odds are {odds}");
+Console.WriteLine($"Welcome to the casino.\n" +
+    $"The worse odds are {worseOdds}\n" +
+    $"The better odds are {betterOdds}");
 Console.WriteLine("How many players would like to play?");
 while (!int.TryParse(Console.ReadLine(), out numberOfPlayers) || numberOfPlayers == 0)
 {
@@ -30,17 +30,35 @@ while (players.Any(player => player.Cash > 0))
         Console.WriteLine($"{player.Name}'s turn");
         player.WriteMyInfo();
 
+        string input;
+        do
+        {
+            Console.WriteLine("What odds do you want to bet against? b or w");
+            input = Console.ReadLine();
+        } while (input != "b" && input != "w");
+
+        odds = input == "b" ? betterOdds : worseOdds;
+
         // Loops until vaild bet is placed
         while (true)
         {
             Console.Write($"\nHow much does {player.Name} want to bet: ");
-            if (int.TryParse(Console.ReadLine(), out int amount))
+            if (decimal.TryParse(Console.ReadLine(), out decimal amount))
             {
-                int bet = player.GiveCash(amount);
-                int pot = bet * 2;
+                decimal bet = player.GiveCash(amount);
+                decimal pot;
+                if (odds == 0.75M)
+                {
+                    pot = bet * 2;
+                }
+                else
+                {
+                    pot = bet * 1.25M;
+                }
+
                 if (pot > 0)
                 {
-                    if (Random.Shared.NextDouble() > odds)
+                    if (Random.Shared.NextDouble() > (double)odds)
                     {
                         Console.WriteLine($"{player.Name} wins {pot}");
                         player.ReceiveCash(pot);

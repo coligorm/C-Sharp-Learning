@@ -3,13 +3,13 @@
 internal class Guy
 {
     public string? Name;
-    public int Cash;
+    public decimal Cash;
     /// <summary>
     /// Writes my name and the amount of cash I have to the console.
     /// </summary>
     public void WriteMyInfo()
     {
-        Console.WriteLine(Name + " has " + Cash + " bucks.");
+        Console.WriteLine($"{Name} has ${Cash}");
     }
     /// <summary>
     /// Gives some of my cash, removing it from my wallet (or printing
@@ -20,17 +20,16 @@ internal class Guy
     /// The amount of cash removed from my wallet, or 0 if I don't
     /// have enough cash (or if the amount is invalid).
     /// </returns>
-    public int GiveCash(int amount)
+    public decimal GiveCash(decimal amount)
     {
         if (amount <= 0)
         {
-            Console.WriteLine(Name + " says: " + amount + " isn't a valid amount");
+            Console.WriteLine($"{Name} has ${amount}");
             return 0;
         }
         if (amount > Cash)
         {
-            Console.WriteLine(Name + " says: " +
-            "I don't have enough cash to give you " + amount);
+            Console.WriteLine($"{Name} says: I don't have enough cash to give you ${amount}");
             return 0;
         }
         Cash -= amount;
@@ -41,11 +40,11 @@ internal class Guy
     /// a message to the console if the amount is invalid).
     /// </summary>
     /// <param name="amount">Amount of cash to receive.</param>
-    public void ReceiveCash(int amount)
+    public void ReceiveCash(decimal amount)
     {
         if (amount <= 0)
         {
-            Console.WriteLine(Name + " says: " + amount + " isn't an amount I'll take");
+            Console.WriteLine($"{Name} says: ${amount} isn't an amount I'll take");
         }
         else
         {
