@@ -11,7 +11,7 @@ public class AbilityScoreCalculator
     public void CalculateAbilityScore()
     {
         double divide = RollResult / DivideBy;
-        int added = AddAmount += (int)divide;
+        int added = AddAmount + (int)divide;
 
         if (added < Minimum)
         {
