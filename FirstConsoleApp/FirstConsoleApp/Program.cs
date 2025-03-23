@@ -167,7 +167,7 @@ bob.ReceiveCash(25);
 // object initializer
 Guy mark = new Guy() { Name = "Mark", Cash = 50 };
 
-TradeMoney();
+//TradeMoney();
 
 void TradeMoney()
 {
@@ -267,3 +267,77 @@ long myLong = (long)myInt;
 decimal myDecimal = (decimal)myLong;
 myString = myString + myInt + myByte +
 myDouble + myChar;
+
+
+
+// Random Test Drive Exercise p 245
+
+// Generate random int
+int randomInt = Random.Shared.Next();
+Console.WriteLine(randomInt);
+
+// Generate random int from 0 - 9
+int zeroToNine = Random.Shared.Next(10);
+Console.WriteLine(zeroToNine);
+
+// Simulate a dice roll
+int dieRoll = Random.Shared.Next(1, 7);
+Console.WriteLine(dieRoll);
+
+// Generates a random floating-point number that is between 0.0 - 1.0 
+double randomDouble = Random.Shared.NextDouble();
+Console.WriteLine(randomDouble * 100);
+
+Console.WriteLine((float)randomDouble * 100F);
+Console.WriteLine((decimal)randomDouble * 100M);
+
+// Simulate a coin toss
+while (true)
+{
+    Console.WriteLine("Heads or Tails?");
+    char input = Console.ReadKey(true).KeyChar;
+
+    int zeroOrOne = Random.Shared.Next(2);
+    bool coinFlip = Convert.ToBoolean(zeroOrOne);
+    if (coinFlip)
+    {
+        Console.WriteLine("Coin landed on: Heads");
+        if (input == 'h')
+        {
+            Console.WriteLine("You win!");
+        }
+        else
+        {
+            Console.WriteLine("You lose!");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Coin landed on: Tails");
+        if (input == 't')
+        {
+            Console.WriteLine("You win!");
+        }
+        else
+        {
+            Console.WriteLine("You lose!");
+        }
+    }
+    if (input != 'h' && input != 't')
+    {
+        break;
+    }
+    Console.WriteLine();
+}
+
+// Brain Power Question:
+// How would you use Random to choose a random string from an array of strings?
+string[] students = new string[5];
+string[] names = ["Matthew", "Mark", "Luke", "John", "Annabelle", "Scotty", "Joan", "Mary", "Evelyn", "Connor", "Andrew", "Ellen"];
+for (int i = 0; i < students.Length; i++)
+{
+    int index = Random.Shared.Next(names.Length);
+    students[i] = names[index];
+}
+Console.WriteLine($"Today's random {students.Length} students are:\n{string.Join("\n", students)}");
+
